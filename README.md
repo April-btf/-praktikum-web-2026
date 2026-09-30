@@ -11,13 +11,11 @@
 - Konfigurasi identitas Git global.
 ---
 ### Spesifikasi Perangkat Lunak
+|Spek|
+|:---:|
+| **Windows 11 Home Single Language**|
+| **16,0 GB (15,7 GB usable)** |
+| **Node v v24.21.0**|
+| **version 2.56.0.windows.1**| 
+| **Laragon 11.19.0** |
 ---
-- **Windows 11 Home Single Language** 
----
-- **16,0 GB (15,7 GB usable)** 
----
-- **Node v v24.21.0**
----
-- **version 2.56.0.windows.1** 
----
-- **Laragon 11.19.0** 
