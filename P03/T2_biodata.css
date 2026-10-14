@@ -1,0 +1,294 @@
+/* Reset CSS */
+* {
+    margin: 0;              /* Menghilangkan jarak luar bawaan */
+    padding: 0;              /* Menghilangkan jarak dalam bawaan */
+    box-sizing: border-box;  /* Menghitung padding dan border dalam ukuran elemen */
+}
+
+/* Pengaturan halaman */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    /* Mengatur jenis huruf pada halaman */
+
+    background-color: #f0f4f8;
+    /* Memberikan warna latar belakang abu-abu muda */
+
+    color: #333;
+    /* Mengatur warna tulisan menjadi abu-abu gelap */
+
+    line-height: 1.6;
+    /* Mengatur jarak antarbaris teks */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #083263, #2476b9);
+    /* Memberikan warna gradasi biru pada bagian atas */
+
+    color: white;
+    /* Mengatur warna tulisan header menjadi putih */
+
+    text-align: center;
+    /* Membuat isi header berada di tengah */
+
+    padding: 30px 20px;
+    /* Memberikan jarak dalam atas-bawah 30px dan kiri-kanan 20px */
+}
+
+header h1 {
+    font-size: 32px;
+    /* Mengatur ukuran judul menjadi 32px */
+
+    margin-bottom: 20px;
+    /* Memberikan jarak di bawah judul */
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none;
+    /* Menghilangkan tanda titik pada daftar menu */
+
+    display: flex;
+    /* Membuat menu berjajar secara horizontal */
+
+    justify-content: center;
+    /* Membuat menu berada di tengah */
+
+    flex-wrap: wrap;
+    /* Membuat menu turun ke baris berikutnya jika ruang tidak cukup */
+
+    gap: 12px;
+    /* Memberikan jarak antaritem menu */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Menghilangkan garis bawah pada tautan */
+
+    color: white;
+    /* Mengatur warna tulisan menu menjadi putih */
+
+    padding: 10px 18px;
+    /* Memberikan jarak dalam pada tautan */
+
+    display: inline-block;
+    /* Membuat tautan dapat diatur jarak dan ukurannya */
+
+    border-radius: 6px;
+    /* Membuat sudut menu sedikit melengkung */
+
+    transition: 0.3s;
+    /* Membuat perubahan tampilan lebih halus */
+}
+
+nav ul li a:hover {
+    background-color: white;
+    /* Mengubah latar belakang menu menjadi putih saat diarahkan kursor */
+
+    color: #1565c0;
+    /* Mengubah tulisan menu menjadi biru saat diarahkan kursor */
+}
+
+/* Garis pemisah */
+hr {
+    border: none;
+    /* Menghilangkan garis bawaan browser */
+
+    height: 3px;
+    /* Mengatur ketebalan garis menjadi 3px */
+
+    background-color: #90caf9;
+    /* Memberikan warna biru muda pada garis */
+}
+
+/* Bagian utama */
+main {
+    max-width: 750px;
+    /* Membatasi lebar konten maksimal 750px */
+
+    margin: 40px auto;
+    /* Memberikan jarak atas-bawah 40px dan membuat konten berada di tengah */
+
+    padding: 0 20px;
+    /* Memberikan jarak kiri dan kanan 20px */
+}
+
+/* Bagian biodata, cerita, kesukaan, dan harapan */
+section {
+    background-color: white;
+    /* Memberikan latar belakang putih */
+
+    padding: 25px;
+    /* Memberikan jarak antara isi dan tepi bagian */
+
+    margin-bottom: 25px;
+    /* Memberikan jarak di bawah setiap bagian */
+
+    border-radius: 8px;
+    /* Membuat sudut bagian melengkung */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    /* Memberikan bayangan tipis pada bagian */
+}
+
+/* Judul setiap bagian */
+section h2 {
+    color: #1565c0;
+    /* Mengatur warna judul menjadi biru */
+
+    margin-bottom: 15px;
+    /* Memberikan jarak di bawah judul */
+
+    font-size: 24px;
+    /* Mengatur ukuran judul menjadi 24px */
+}
+
+/* Daftar biodata */
+#biodata ul {
+    padding-left: 25px;
+    /* Memberikan jarak daftar dari sisi kiri */
+}
+
+#biodata li {
+    margin-bottom: 8px;
+    /* Memberikan jarak antaritem biodata */
+}
+
+/* Cerita tentang saya */
+#cerita p {
+    text-align: justify;
+    /* Membuat teks rata kiri dan kanan */
+}
+
+/* Kesukaan saya */
+#kesukaan p {
+    margin-bottom: 10px;
+    /* Memberikan jarak di bawah paragraf kesukaan */
+}
+
+#kesukaan ul {
+    padding-left: 25px;
+    /* Memberikan jarak daftar dari sisi kiri */
+    margin-bottom: 15px;
+    /* Memberikan jarak di bawah daftar */
+}
+
+#kesukaan li {
+    margin-bottom: 8px;
+    /* Memberikan jarak antaritem kesukaan */
+}
+
+/* Harapan saya */
+#tantangan p {
+    text-align: justify;
+    /* Membuat paragraf harapan rata kiri dan kanan */
+
+    margin-bottom: 12px;
+    /* Memberikan jarak di bawah setiap paragraf */
+}
+
+/* Pesan untuk diri sendiri dan ucapan terima kasih */
+aside {
+    max-width: 710px;
+    /* Membatasi lebar bagian pesan */
+
+    margin: 25px auto;
+    /* Memberikan jarak atas-bawah dan membuat bagian berada di tengah */
+
+    padding: 25px;
+    /* Memberikan jarak di dalam bagian */
+
+    background-color: white;
+    /* Memberikan latar belakang putih */
+
+    border-radius: 8px;
+    /* Membuat sudut bagian melengkung */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    /* Memberikan bayangan tipis */
+}
+
+aside h3 {
+    color: #1565c0;
+    /* Mengatur warna judul pesan menjadi biru */
+
+    margin-bottom: 10px;
+    /* Memberikan jarak di bawah judul */
+}
+
+aside p {
+    text-align: justify;
+    /* Membuat paragraf rata kiri dan kanan */
+}
+
+/* Footer */
+footer {
+    background-color: #16324f;
+    /* Memberikan warna biru gelap pada footer */
+
+    color: white;
+    /* Mengubah warna tulisan footer menjadi putih */
+
+    text-align: center;
+    /* Membuat tulisan footer berada di tengah */
+
+    padding: 20px;
+    /* Memberikan jarak di dalam footer */
+
+    margin-top: 40px;
+    /* Memberikan jarak di atas footer */
+}
+
+footer p {
+    font-size: 14px;
+    /* Mengatur ukuran tulisan footer menjadi 14px */
+}
+
+/* Tampilan pada HP */
+@media (max-width: 600px) {
+    /* Aturan berikut berlaku pada layar dengan lebar maksimal 600px */
+
+    header h1 {
+        font-size: 26px;
+        /* Mengecilkan ukuran judul pada HP */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Menyusun menu navigasi secara vertikal */
+
+        gap: 5px;
+        /* Mengurangi jarak antaritem menu */
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        /* Menyesuaikan jarak dalam tautan pada HP */
+    }
+
+    main {
+        margin: 25px auto;
+        /* Mengurangi jarak atas dan bawah konten */
+
+        padding: 0 15px;
+        /* Mengurangi jarak kiri dan kanan konten */
+    }
+
+    section {
+        padding: 22px 18px;
+        /* Mengurangi jarak dalam setiap bagian */
+    }
+
+    section h2 {
+        font-size: 20px;
+        /* Mengecilkan ukuran judul bagian pada HP */
+    }
+
+    aside {
+        margin: 20px 15px;
+        /* Memberikan jarak kiri dan kanan pada bagian pesan */
+
+        padding: 20px;
+        /* Mengurangi jarak dalam bagian pesan */
+    }
+}
