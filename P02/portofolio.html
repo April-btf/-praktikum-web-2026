@@ -1,0 +1,228 @@
+<!-- Menentukan bahwa dokumen menggunakan HTML5. -->
+<!DOCTYPE html>
+
+<!-- Menentukan bahasa utama halaman, yaitu bahasa Indonesia. -->
+<html lang="id">
+
+<head>
+    <!-- Mengatur karakter agar huruf dan simbol tampil dengan benar. -->
+    <meta charset="UTF-8">
+
+    <!-- Menyesuaikan lebar halaman dengan layar komputer maupun HP. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Judul yang muncul pada tab browser. -->
+    <title>Portofolio</title>
+
+    <!-- Menghubungkan halaman dengan file CSS.
+         ../ berarti keluar dari folder HTML menuju folder P04. -->
+    <link rel="stylesheet" href="../P03/style_portofolio.css">
+
+    <!-- Menghubungkan halaman dengan JavaScript.
+         defer membuat kode dijalankan setelah HTML selesai dibaca. -->
+    <script src="../P04/proyek_portofolio.js" defer></script>
+</head>
+
+<body>
+    <!-- Bagian kepala halaman yang berisi judul dan navigasi. -->
+    <header>
+        <h1>Portofolio Pengembang Web</h1>
+
+        <!-- Menu untuk berpindah ke halaman lain. -->
+        <nav aria-label="Navigasi utama">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kontak.html">Hubungi saya</a></li>
+                <li><a href="portofolio.html">portofolio</a></li>
+                <li><a href="T2_biodata.html">Data Pribadi</a></li>
+                <li><a href="T2_kartini.html">Biografi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Memberikan garis pemisah antarbagiannya. -->
+    <hr>
+
+    <!-- Menampung konten utama halaman. -->
+    <main>
+        <!-- Bagian pengenalan pemilik portofolio. -->
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+
+            <!-- Kamu bisa mengubah deskripsi ini sesuai profilmu. -->
+            <p>
+                Halo! Saya Aprilia Fauziah, mahasiswa Teknik Informatika
+                di Institut Teknologi Garut. Saya memiliki ketertarikan
+                dalam pengembangan aplikasi web modern berbasis
+                JavaScript dan Next.js.
+            </p>
+        </section>
+
+        <!-- Bagian pengelolaan seluruh proyek portofolio. -->
+        <section id="proyek">
+            <h2>Portofolio Proyek</h2>
+
+            <!-- Wadah tiga kartu statistik proyek. -->
+            <div class="stats">
+                <!-- Menampilkan jumlah seluruh proyek. -->
+                <article class="stat-card">
+                    <h3>Total Proyek</h3>
+
+                    <!-- Nilai awal akan diperbarui melalui JavaScript. -->
+                    <p id="stat-total-projects">0</p>
+                </article>
+
+                <!-- Menampilkan jumlah proyek yang sudah selesai. -->
+                <article class="stat-card">
+                    <h3>Proyek Selesai</h3>
+
+                    <!-- ID digunakan JavaScript untuk mengubah angkanya. -->
+                    <p id="stat-completed-projects">0</p>
+                </article>
+
+                <!-- Menampilkan total anggaran seluruh proyek. -->
+                <article class="stat-card">
+                    <h3>Total Estimasi Anggaran</h3>
+
+                    <!-- JavaScript akan mengisinya dalam format rupiah. -->
+                    <p id="stat-total-budget">Rp0</p>
+                </article>
+            </div>
+
+            <!-- Kotak yang membungkus formulir tambah proyek. -->
+            <div class="form-container">
+                <h3>Tambah Proyek Baru</h3>
+
+                <!-- novalidate membuat validasi ditangani oleh JavaScript,
+                     sehingga pesan kesalahan dapat kita tentukan sendiri. -->
+                <form id="project-form" novalidate>
+                    <!-- Kelompok input judul proyek. -->
+                    <div class="form-group">
+                        <!-- for harus sama dengan ID input yang dituju. -->
+                        <label for="project-title">Judul Proyek</label>
+
+                        <!-- Input teks untuk membaca nama proyek. -->
+                        <input type="text" id="project-title" name="title" placeholder="Masukkan judul proyek" required>
+                    </div>
+
+                    <!-- Kelompok pilihan kategori proyek. -->
+                    <div class="form-group">
+                        <label for="project-category">Kategori</label>
+
+                        <!-- value menjadi nilai kategori yang dibaca JavaScript. -->
+                        <select id="project-category" name="category" required>
+                            <option value="Web App">Web App</option>
+                            <option value="Mobile App">Mobile App</option>
+                            <option value="Desktop App">Desktop App</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                        </select>
+                    </div>
+
+                    <!-- Kelompok input anggaran proyek. -->
+                    <div class="form-group">
+                        <label for="project-budget">
+                            Estimasi Anggaran (Rp)
+                        </label>
+
+                        <!-- type number digunakan untuk angka.
+                             min dan step memberi petunjuk batas serta
+                             kenaikan angka pada kontrol input. -->
+                        <input type="number" id="project-budget" name="budget" min="0.01" step="0.01"
+                            placeholder="Contoh: 2500000" required>
+                    </div>
+
+                    <!-- Checkbox menentukan status awal proyek. -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="project-completed" name="completed">
+
+                        <!-- Klik tulisan ini juga dapat mencentang checkbox. -->
+                        <label for="project-completed">
+                            Sudah Selesai
+                        </label>
+                    </div>
+
+                    <!-- Tempat pesan kesalahan validasi.
+                         role alert membantu pembaca layar mengenali pesan. -->
+                    <p id="form-error" class="error" role="alert"></p>
+
+                    <!-- Tombol submit memicu event submit pada formulir. -->
+                    <button type="submit" class="btn-primary">
+                        Tambah Proyek
+                    </button>
+                </form>
+            </div>
+
+            <!-- Bagian pencarian dan filter daftar proyek. -->
+            <div class="project-controls">
+                <h3>Daftar Proyek</h3>
+
+                <!-- Label untuk input pencarian. -->
+                <label for="project-search">Cari nama proyek</label>
+
+                <!-- Pencarian dibaca setiap kali pengguna mengetik. -->
+                <input type="search" id="project-search" placeholder="Ketik nama proyek...">
+
+                <!-- Mengelompokkan tombol filter kategori. -->
+                <div class="filter-buttons" role="group" aria-label="Filter kategori">
+                    <!-- data-category menyimpan kategori tombol.
+                         active menandai tombol yang sedang dipilih.
+                         aria-pressed menyampaikan status pilihan. -->
+                    <button type="button" class="btn-filter active" data-category="Semua" aria-pressed="true">
+                        Semua
+                    </button>
+
+                    <!-- Tombol untuk menampilkan kategori Web App. -->
+                    <button type="button" class="btn-filter" data-category="Web App" aria-pressed="false">
+                        Web App
+                    </button>
+
+                    <!-- Tombol untuk menampilkan kategori Mobile App. -->
+                    <button type="button" class="btn-filter" data-category="Mobile App" aria-pressed="false">
+                        Mobile App
+                    </button>
+
+                    <!-- Tombol untuk menampilkan kategori Desktop App. -->
+                    <button type="button" class="btn-filter" data-category="Desktop App" aria-pressed="false">
+                        Desktop App
+                    </button>
+
+                    <!-- Tombol untuk menampilkan kategori UI/UX Design. -->
+                    <button type="button" class="btn-filter" data-category="UI/UX Design" aria-pressed="false">
+                        UI/UX Design
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menampilkan pemberitahuan setelah tambah, ubah, atau hapus. -->
+            <p id="action-message" class="message" role="status"></p>
+
+            <!-- Wadah kosong yang akan diisi kartu proyek oleh JavaScript. -->
+            <div id="project-list" class="project-list"></div>
+
+            <!-- Ditampilkan jika JavaScript dinonaktifkan pada browser. -->
+            <noscript>
+                <p>Aktifkan JavaScript untuk mengelola proyek.</p>
+            </noscript>
+        </section>
+    </main>
+
+    <hr>
+
+    <!-- Informasi tambahan di luar konten utama. -->
+    <aside>
+        <h3>Status Pekerjaan</h3>
+
+        <p>
+            Saat ini terbuka untuk proyek freelance dan kolaborasi
+            pengembangan web.
+        </p>
+    </aside>
+
+    <!-- Bagian penutup halaman. -->
+    <footer>
+        <!-- &copy; menghasilkan simbol hak cipta. -->
+        <p>&copy; 2026 Aprilia Fauziah — Teknik Informatika ITG.</p>
+    </footer>
+</body>
+
+</html>

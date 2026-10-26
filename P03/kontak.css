@@ -1,0 +1,342 @@
+/* Reset CSS */
+/* Mengatur ulang jarak bawaan semua elemen */
+* {
+    margin: 0;              /* Menghilangkan jarak luar */
+    padding: 0px;           /* Menghilangkan jarak dalam */
+    box-sizing: border-box; /* Ukuran elemen termasuk padding dan border */
+}
+
+/* Pengaturan halaman */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    /* Mengatur jenis huruf yang digunakan */
+
+    background-color: #f0f4f8;
+    /* Memberikan warna latar belakang halaman */
+
+    color: #333;
+    /* Mengatur warna teks menjadi abu-abu gelap */
+
+    line-height: 1.6;
+    /* Mengatur jarak antarbaris teks */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #083263, #2476b9);
+    /* Memberikan warna gradasi biru pada header */
+
+    color: rgb(253, 253, 253);
+    /* Mengatur warna teks header menjadi putih */
+
+    text-align: center;
+    /* Membuat teks berada di tengah */
+
+    padding: 30px 20px;
+    /* Memberikan jarak dalam atas-bawah 30px dan kiri-kanan 20px */
+}
+
+header h1 {
+    font-size: 32px;
+    /* Mengatur ukuran judul menjadi 32px */
+
+    margin-bottom: 20px;
+    /* Memberikan jarak di bawah judul */
+}
+
+/* Navigasi */
+nav ul {
+    list-style: none;
+    /* Menghilangkan tanda titik pada daftar menu */
+
+    display: flex;
+    /* Membuat menu berjajar secara horizontal */
+
+    justify-content: center;
+    /* Membuat menu berada di tengah */
+
+    flex-wrap: wrap;
+    /* Membuat menu turun ke baris berikutnya jika tidak cukup ruang */
+
+    gap: 12px;
+    /* Memberikan jarak antaritem menu */
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Menghilangkan garis bawah pada tautan */
+
+    color: white;
+    /* Mengubah warna tulisan menu menjadi putih */
+
+    padding: 10px 18px;
+    /* Memberikan ruang di dalam tautan */
+
+    display: inline-block;
+    /* Membuat tautan bisa diatur ukuran dan jaraknya */
+
+    border-radius: 6px;
+    /* Membuat sudut menu sedikit melengkung */
+
+    transition: 0.3s;
+    /* Membuat perubahan tampilan lebih halus selama 0,3 detik */
+}
+
+nav ul li a:hover {
+    background-color: white;
+    /* Mengubah latar belakang menu menjadi putih saat diarahkan kursor */
+
+    color: #1565c0;
+    /* Mengubah warna tulisan menjadi biru saat diarahkan kursor */
+}
+
+/* Garis pemisah */
+hr {
+    border: none;
+    /* Menghilangkan garis bawaan browser */
+
+    height: 3px;
+    /* Mengatur ketebalan garis menjadi 3px */
+
+    background-color: #90caf9;
+    /* Memberikan warna biru muda pada garis */
+}
+
+/* Bagian utama */
+main {
+    max-width: 750px;
+    /* Membatasi lebar konten maksimal 750px */
+
+    margin: 40px auto;
+    /* Memberikan jarak atas-bawah 40px dan membuat konten di tengah */
+
+    padding: 0 20px;
+    /* Memberikan jarak dalam kiri dan kanan 20px */
+}
+
+section {
+    background-color: white;
+    /* Memberikan latar belakang putih pada bagian formulir */
+
+    padding: 35px;
+    /* Memberikan jarak antara isi dan tepi bagian */
+
+    border-radius: 12px;
+    /* Membuat sudut bagian melengkung */
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    /* Memberikan bayangan tipis pada bagian */
+}
+
+section h2 {
+    color: #1565c0;
+    /* Mengubah warna judul menjadi biru */
+
+    text-align: center;
+    /* Membuat judul berada di tengah */
+
+    margin-bottom: 25px;
+    /* Memberikan jarak di bawah judul */
+
+    font-size: 24px;
+    /* Mengatur ukuran judul menjadi 24px */
+}
+
+/* Formulir */
+form p {
+    margin-bottom: 20px;
+    /* Memberikan jarak di bawah setiap kelompok formulir */
+}
+
+label {
+    display: inline-block;
+    /* Memungkinkan label diatur jaraknya */
+
+    margin-bottom: 8px;
+    /* Memberikan jarak di bawah label */
+
+    font-weight: bold;
+    /* Membuat tulisan label menjadi tebal */
+
+    color: #444;
+    /* Mengatur warna label menjadi abu-abu gelap */
+}
+
+/* Input, select, dan textarea */
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    /* Membuat kolom memenuhi lebar bagian yang tersedia */
+
+    padding: 12px 14px;
+    /* Memberikan jarak dalam kolom */
+
+    border: 1px solid #ccd6e0;
+    /* Memberikan garis tepi tipis berwarna abu-abu kebiruan */
+
+    border-radius: 7px;
+    /* Membuat sudut kolom melengkung */
+
+    font-size: 15px;
+    /* Mengatur ukuran tulisan di dalam kolom */
+
+    font-family: inherit;
+    /* Menggunakan jenis huruf yang diwarisi dari elemen induk */
+
+    background-color: #fafcff;
+    /* Memberikan latar belakang kolom yang hampir putih */
+
+    transition: 0.3s;
+    /* Membuat perubahan tampilan lebih halus */
+}
+
+/* Efek saat kolom dipilih */
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    /* Menghilangkan garis fokus bawaan browser */
+
+    border-color: #1976d2;
+    /* Mengubah warna garis kolom menjadi biru saat dipilih */
+
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+    /* Memberikan bayangan biru tipis pada kolom yang dipilih */
+
+    background-color: white;
+    /* Mengubah latar belakang kolom menjadi putih */
+}
+
+textarea {
+    resize: vertical;
+    /* Memungkinkan tinggi kolom pesan diubah ke atas atau bawah */
+
+    min-height: 140px;
+    /* Menentukan tinggi minimum kolom pesan */
+}
+
+/* Tombol */
+button {
+    padding: 12px 22px;
+    /* Memberikan jarak dalam tombol */
+
+    border: none;
+    /* Menghilangkan garis tepi tombol */
+
+    border-radius: 7px;
+    /* Membuat sudut tombol melengkung */
+
+    font-size: 15px;
+    /* Mengatur ukuran tulisan tombol */
+
+    font-weight: bold;
+    /* Membuat tulisan tombol menjadi tebal */
+
+    cursor: pointer;
+    /* Mengubah kursor menjadi bentuk tangan saat diarahkan ke tombol */
+
+    transition: 0.3s;
+    /* Membuat perubahan tampilan tombol lebih halus */
+}
+
+button[type="submit"] {
+    background-color: #1976d2;
+    /* Memberikan warna biru pada tombol kirim */
+
+    color: white;
+    /* Membuat tulisan tombol kirim berwarna putih */
+
+    margin-right: 8px;
+    /* Memberikan jarak kanan tombol kirim */
+}
+
+button[type="submit"]:hover {
+    background-color: #0d47a1;
+    /* Mengubah warna tombol kirim menjadi biru lebih gelap saat diarahkan kursor */
+
+    transform: translateY(-2px);
+    /* Mengangkat tombol sedikit ke atas saat diarahkan kursor */
+}
+
+button[type="reset"] {
+    background-color: #e0e0e0;
+    /* Memberikan warna abu-abu pada tombol batal */
+
+    color: #333;
+    /* Mengatur warna tulisan tombol batal */
+}
+
+button[type="reset"]:hover {
+    background-color: #bdbdbd;
+    /* Mengubah warna tombol batal saat diarahkan kursor */
+}
+
+/* Footer */
+footer {
+    background-color: #16324f;
+    /* Memberikan warna biru gelap pada footer */
+
+    color: white;
+    /* Mengubah warna teks footer menjadi putih */
+
+    text-align: center;
+    /* Membuat teks footer berada di tengah */
+
+    padding: 20px;
+    /* Memberikan jarak dalam footer */
+
+    margin-top: 40px;
+    /* Memberikan jarak di atas footer */
+}
+
+footer p {
+    font-size: 14px;
+    /* Mengatur ukuran tulisan footer menjadi 14px */
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    /* Kode di dalam bagian ini berlaku pada layar maksimal 600px */
+
+    header h1 {
+        font-size: 26px;
+        /* Mengecilkan judul header pada layar HP */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Menyusun menu navigasi secara vertikal */
+
+        gap: 5px;
+        /* Mengurangi jarak antaritem menu */
+    }
+
+    nav ul li a {
+        padding: 8px 15px;
+        /* Menyesuaikan jarak dalam tautan untuk layar HP */
+    }
+
+    main {
+        margin: 25px auto;
+        /* Mengurangi jarak atas-bawah konten */
+
+        padding: 0 15px;
+        /* Mengurangi jarak kiri-kanan konten */
+    }
+
+    section {
+        padding: 22px 18px;
+        /* Mengurangi jarak dalam bagian formulir */
+    }
+
+    section h2 {
+        font-size: 20px;
+        /* Mengecilkan judul bagian pada layar HP */
+    }
+
+    button {
+        padding: 11px 16px;
+        /* Menyesuaikan ukuran tombol pada layar HP */
+    }
+}

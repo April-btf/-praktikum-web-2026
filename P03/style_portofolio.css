@@ -1,0 +1,560 @@
+/*
+    Nama file: style_portofolio.css
+    Fungsi: Menyamakan tampilan portofolio
+    dengan halaman beranda, kontak, dan biodata.
+*/
+
+/* Menghapus jarak bawaan dan menyamakan perhitungan ukuran elemen. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Menggunakan font dan warna dasar yang sama dengan halaman lainnya. */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Membuat header gradasi biru selebar halaman. */
+body > header {
+    background: linear-gradient(135deg, #083263, #2476b9);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Menyamakan ukuran judul utama dengan halaman lainnya. */
+body > header h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Menyusun navigasi di tengah dan membolehkan menu turun baris. */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Mengatur tulisan dan ruang pada tautan navigasi. */
+nav ul li a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Memberikan warna putih pada menu yang disentuh atau dipilih. */
+nav ul li a:hover,
+nav ul li a[aria-current="page"] {
+    background-color: white;
+    color: #1565c0;
+}
+
+/* Menyamakan garis pemisah dengan halaman lainnya. */
+hr {
+    border: none;
+    height: 3px;
+    background-color: #90caf9;
+}
+
+/* Menyamakan lebar dan posisi konten utama. */
+main {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Membuat setiap bagian utama menjadi kotak putih dengan bayangan. */
+main > section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Menggunakan warna biru untuk judul bagian. */
+main > section > h2 {
+    color: #1565c0;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Meratakan paragraf pengenalan ke kiri dan kanan. */
+#tentang p {
+    text-align: justify;
+}
+
+/* Menyusun statistik dalam dua kolom agar angka tetap terbaca. */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 20px 0 25px;
+}
+
+/* Membuat kartu total anggaran memenuhi satu baris. */
+.stat-card:last-child {
+    grid-column: 1 / -1;
+}
+
+/* Mengatur tampilan kartu statistik dengan aksen biru di kiri. */
+.stat-card {
+    min-width: 0;
+    padding: 18px;
+    background-color: #f7faff;
+    border: 1px solid #dce8f5;
+    border-left: 4px solid #2476b9;
+    border-radius: 6px;
+}
+
+/* Mengatur judul kecil pada statistik. */
+.stat-card h3 {
+    color: #1565c0;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Memperbesar angka statistik dan menjaga angka panjang di dalam kartu. */
+.stat-card p {
+    color: #083263;
+    font-size: 25px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Membuat kotak formulir dengan latar biru sangat muda. */
+.form-container {
+    padding: 22px;
+    margin-bottom: 28px;
+    background-color: #f7faff;
+    border: 1px solid #dce8f5;
+    border-radius: 8px;
+}
+
+/* Mengatur judul formulir dan daftar proyek. */
+.form-container > h3,
+.project-controls > h3 {
+    color: #1565c0;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+/* Memberikan jarak antarinput pada formulir tambah maupun edit. */
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* Meletakkan label di atas kolom input. */
+label {
+    display: block;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Menyamakan tampilan kolom tambah, pencarian, dan edit proyek. */
+input[type="text"],
+input[type="number"],
+input[type="search"],
+select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #ccd6e0;
+    border-radius: 7px;
+    background-color: #fafcff;
+    color: #333;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Memberikan jarak pada input edit yang berada di dalam label. */
+.form-group label > input,
+.form-group label > select {
+    margin-top: 8px;
+}
+
+/* Menampilkan warna petunjuk input yang lebih lembut. */
+input::placeholder {
+    color: #6b7785;
+    opacity: 1;
+}
+
+/* Menandai kolom yang sedang diisi dengan garis dan bayangan biru. */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1976d2;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+/* Menyusun checkbox dan keterangannya secara mendatar. */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    font-weight: normal;
+}
+
+/* Menghilangkan jarak tambahan pada label checkbox formulir tambah. */
+.checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Menyamakan ukuran dan warna checkbox. */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    accent-color: #1976d2;
+    cursor: pointer;
+}
+
+/* Mengatur tampilan dasar seluruh tombol. */
+button {
+    padding: 11px 16px;
+    border: 1px solid #ccd6e0;
+    border-radius: 7px;
+    background-color: #edf1f5;
+    color: #333;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: pointer;
+    transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        color 0.3s;
+}
+
+/* Memberikan perubahan warna pada tombol biasa saat disentuh kursor. */
+button:hover {
+    background-color: #dfe7ef;
+}
+
+/* Mengatur tombol Tambah Proyek dan Simpan menjadi biru. */
+.btn-primary {
+    background-color: #1976d2;
+    border-color: #1976d2;
+    color: white;
+}
+
+/* Menggelapkan tombol utama saat disentuh kursor. */
+.btn-primary:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+}
+
+/* Memberikan penanda fokus untuk pengguna keyboard. */
+button:focus-visible,
+a:focus-visible,
+input[type="checkbox"]:focus-visible {
+    outline: 3px solid #1976d2;
+    outline-offset: 3px;
+}
+
+/* Menyusun tombol filter dengan jarak yang rapi. */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 22px;
+}
+
+/* Mengatur tampilan filter yang belum dipilih. */
+.btn-filter {
+    padding: 9px 13px;
+    background-color: white;
+    border-color: #b9cfe5;
+    color: #1565c0;
+}
+
+/* Memberikan latar biru muda saat filter disentuh kursor. */
+.btn-filter:hover {
+    background-color: #e8f2fd;
+    border-color: #1976d2;
+}
+
+/* Menandai kategori yang sedang dipilih dengan latar biru. */
+.btn-filter.active {
+    background-color: #1976d2;
+    border-color: #1976d2;
+    color: white;
+}
+
+/* Menyusun kartu proyek dalam dua kolom pada layar besar. */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* Memberikan aksen biru yang serasi dengan artikel pada beranda. */
+.project-card {
+    min-width: 0;
+    padding: 18px;
+    background-color: #f7faff;
+    border: 1px solid #dce8f5;
+    border-left: 4px solid #2476b9;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+}
+
+/* Mengatur tulisan kategori pada kartu. */
+.project-category {
+    color: #2476b9;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Mengatur judul proyek dan judul formulir edit. */
+.project-card h3 {
+    color: #1565c0;
+    font-size: 19px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* Memberikan jarak setelah informasi anggaran. */
+.project-card > p:not(.project-category) {
+    margin-bottom: 15px;
+}
+
+/* Mengatur bentuk label status. */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Menggunakan warna hijau untuk proyek yang selesai. */
+.badge-success {
+    background-color: #e3f3e9;
+    color: #24623f;
+}
+
+/* Menggunakan warna kuning untuk proyek dalam pengerjaan. */
+.badge-pending {
+    background-color: #fff0d3;
+    color: #825a11;
+}
+
+/* Menyusun tombol Edit, Ubah Status, Hapus, Simpan, dan Batal. */
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #dce8f5;
+}
+
+/* Menyesuaikan ukuran tombol agar nyaman di dalam kartu. */
+.card-actions button {
+    padding: 9px 12px;
+    font-size: 14px;
+}
+
+/* Menggunakan biru muda untuk tombol Edit dan Ubah Status. */
+.btn-status {
+    background-color: #e3effc;
+    border-color: #bbd5f0;
+    color: #1565c0;
+}
+
+/* Menggelapkan tombol Edit dan Ubah Status saat disentuh kursor. */
+.btn-status:hover {
+    background-color: #d0e4fa;
+    border-color: #1976d2;
+}
+
+/* Memberikan warna merah khusus pada tombol Hapus Proyek. */
+.btn-delete {
+    background-color: #fff0f0;
+    border-color: #edcaca;
+    color: #a32c2c;
+}
+
+/* Memperjelas warna tombol hapus saat disentuh kursor. */
+.btn-delete:hover {
+    background-color: #fbdede;
+    border-color: #d89b9b;
+}
+
+/* Memastikan formulir edit menggunakan seluruh lebar kartu. */
+.project-card form {
+    width: 100%;
+}
+
+/* Mengatur pesan kesalahan pada formulir tambah dan edit. */
+.error {
+    padding: 10px 12px;
+    margin: 12px 0;
+    border-left: 3px solid #b42318;
+    border-radius: 4px;
+    background-color: #fff0f0;
+    color: #b42318;
+    font-size: 14px;
+}
+
+/* Mengatur pemberitahuan keberhasilan tindakan. */
+.message {
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border-left: 3px solid #2476b9;
+    border-radius: 4px;
+    background-color: #eaf3fd;
+    color: #083263;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* Menyembunyikan kotak pesan saat tidak memiliki isi. */
+.error:empty,
+.message:empty {
+    display: none;
+}
+
+/* Menampilkan pesan daftar kosong selebar area proyek. */
+.empty-message {
+    grid-column: 1 / -1;
+    padding: 25px 15px;
+    border: 1px dashed #b9cfe5;
+    border-radius: 6px;
+    background-color: #f7faff;
+    color: #5c6c7c;
+    text-align: center;
+}
+
+/* Menyamakan kotak status pekerjaan dengan halaman beranda. */
+body > aside {
+    width: calc(100% - 40px);
+    max-width: 710px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Menggunakan judul biru pada status pekerjaan. */
+body > aside h3 {
+    color: #1565c0;
+    margin-bottom: 10px;
+}
+
+/* Menyamakan perataan paragraf status pekerjaan. */
+body > aside p {
+    text-align: justify;
+}
+
+/* Menyamakan footer biru gelap dengan halaman lainnya. */
+body > footer {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #16324f;
+    color: white;
+    text-align: center;
+}
+
+/* Menyamakan ukuran tulisan footer. */
+body > footer p {
+    font-size: 14px;
+}
+
+/* Menyesuaikan tampilan pada layar HP. */
+@media (max-width: 600px) {
+    /* Mengecilkan judul utama pada layar kecil. */
+    body > header h1 {
+        font-size: 26px;
+    }
+
+    /* Menyusun navigasi vertikal seperti halaman lainnya. */
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Mengurangi ruang pada tautan navigasi. */
+    nav ul li a {
+        padding: 8px 15px;
+    }
+
+    /* Mengurangi jarak konten pada HP. */
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    /* Mengurangi padding bagian utama. */
+    main > section {
+        padding: 20px 16px;
+    }
+
+    /* Mengecilkan judul bagian. */
+    main > section > h2 {
+        font-size: 20px;
+    }
+
+    /* Menampilkan statistik dan proyek dalam satu kolom. */
+    .stats,
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mengembalikan kartu anggaran ke susunan satu kolom. */
+    .stat-card:last-child {
+        grid-column: auto;
+    }
+
+    /* Menyesuaikan ruang dalam formulir dan kartu. */
+    .form-container,
+    .stat-card,
+    .project-card {
+        padding: 16px;
+    }
+
+    /* Mengizinkan tombol tindakan membagi lebar secara seimbang. */
+    .card-actions button {
+        flex: 1 1 auto;
+    }
+
+    /* Menyesuaikan ukuran dan jarak status pekerjaan. */
+    body > aside {
+        width: calc(100% - 30px);
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* Menghilangkan transisi jika pengguna memilih pengurangan animasi. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none;
+    }
+}
